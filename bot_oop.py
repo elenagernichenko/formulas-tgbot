@@ -114,7 +114,7 @@ class App:
                     self.cur.execute('''SELECT formula FROM formulas WHERE name=?''', [msg])
                     formulas = self.cur.fetchone()
                       
-                    photo = open('E:/python/project/tg_bot/{}.png'.format(formulas[0]), 'rb')
+                    photo = open('E:/python/project/images/tg_bot/{}.png'.format(formulas[0]), 'rb')
                     self.bot.send_photo(message.from_user.id, photo)
                     file_id = 'form'
                     self.bot.send_photo(message.from_user.id, file_id)
@@ -183,7 +183,7 @@ class App:
                     form = 'Держи: \n- Понятие: {} \n - Формулировка: {} \n - Единица измерения: {}'.format(all_info[0][1],all_info[0][2],
                                                                                                                         all_info[0][3])
 
-                    photo = open('E:/python/project/tg_bot/{}.png'.format(all_info[0][4]), 'rb')
+                    photo = open('E:/python/project/images/tg_bot/{}.png'.format(all_info[0][4]), 'rb')
                     self.bot.send_photo(message.from_user.id, photo, form)
                     wr_4 += 1
             if wr_4 == 0 and message.text not in self.conc and message.text not in self.comma:
@@ -207,7 +207,7 @@ class App:
                         form_1 = 'Держи: \n- Понятие: {} \n - Формулировка: {} \n - Единица измерения: {}'.format(all_info_1[0][1],all_info_1[0][2],
                                                                                                                               all_info_1[0][3])
 
-                        photo_1 = open('E:/python/project/tg_bot/{}.png'.format(all_info_1[0][4]), 'rb')
+                        photo_1 = open('E:/python/project/images/tg_bot/{}.png'.format(all_info_1[0][4]), 'rb')
                         self.bot.send_photo(message.from_user.id, photo_1, form_1)
                         wr_5 += 1
             if (wr_5 == 0 or message.text.isdigit() == False) and message.text not in self.conc  and message.text not in self.comma:
